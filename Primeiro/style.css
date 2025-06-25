@@ -1,0 +1,721 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color:white;
+    color: var(--dark);
+    line-height: 1;
+}
+
+header {
+    background-color: var(--dark);
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: transparent
+}
+
+nav {
+    display: fixed;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 12000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/*Navbar*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    max-width: 10000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.navbar-brand {
+    color: #0c0e34; /* Sua cor original */
+    font-size: 2.5rem; /* Seu tamanho original */
+    font-weight: 600; /* Seu peso original */
+    text-decoration: none; /* Seu estilo original */
+    padding: 0.5rem 0; /* Seu padding original */
+    position: relative; /* Importante para posicionar o pseudo-elemento ::after */
+    display: inline-block; /* Garante que o ::after use a largura do conteúdo "BrasLuz" */
+}
+.navbar-brand::after {
+    content: ''; 
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    width: 100%; 
+    height: 3px; 
+    background-color: #0c0e34; 
+    animation: colorCycleUnderline 6s infinite linear;
+}
+@keyframes colorCycleUnderline {
+    0%   { background-color: #08379e; } 
+    25%  { background-color: #f4e094; }
+    50%  { background-color: #f4740c; }  
+    75%  { background-color: #99c998; }   
+    100% { background-color: #5caf6a; } 
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: #0c0e34;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+    margin: 0.25rem;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    color: #f4740c;
+    background-color: #f8f9fa;
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background-color: #f4740c;
+    font-weight: 500;
+}
+
+.nav-link.disabled {
+    color: #999999;
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
+/*Fim*/
+
+
+/*Home*/
+
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/img/Foto1.jpg) ;
+    background-size: cover;
+    background-position: center -50%;
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #0c0e34;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+.btn:hover {
+    background-color: #f4740c;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #0c0e34;
+}
+
+.btn-secondary:hover {
+    background-color: #f4740c;
+}
+
+section {
+    padding: 5rem 1rem;
+}
+/*Fim da home*/
+
+ /* Estilos do botão WhatsApp */
+ .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.whatsapp-btn svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+
+/* Animação de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-btn {
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+/*Fim btn whatsapp*/
+
+/*Cards*/
+.diagonal-section {
+    padding: 150px 50;
+    background-color:#ffffff;
+}
+
+.diagonal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.diagonal-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.diagonal-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.diagonal-item:hover img {
+    transform: scale(1.1);
+}
+
+.diagonal-title {
+    text-align: center;
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Overlay com texto expandido */
+.diagonal-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000ad;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.diagonal-item:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    color: #f4740c;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.overlay p {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+
+}
+
+
+@media (max-width: 992px) {
+    .diagonal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .diagonal-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/*Fim*/
+
+/* Números Section */
+.numbers {
+    padding: 60px 0;
+    background: linear-gradient(90deg, #f4740c, #f4e094, #5caf6a);
+    color: #0c0e34
+}
+
+.numbers .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+}
+
+.numbers .col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.numbers h3 {
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.numbers p {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+/*Fim*/
+
+/*Mapa*/
+#mapa {
+    margin: 60px 0;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, white);
+    text-align: center;
+}
+
+#mapa h2 {
+    font-size: 2.5rem;
+    color: #0c0e34;
+    margin-bottom: 1px;
+    font-weight: 630;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative; 
+}
+#mapa h2::after {
+    content: '';
+    display: block;
+    width: 330px;
+    height: 4px;
+    margin: 2px auto 0;
+    border-radius: 2px;
+    animation: colorCycleUnderline 6s infinite linear;
+}
+#mapa p {
+    font-size: 1.3rem;
+    color: #0c0e34;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+#map {
+    height: 500px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #0e4b8b;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#map:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+button.gm-control-active {
+    background-color: #007bff !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 10px 15px !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.gm-control-active:hover {
+    background-color: #0056b3 !important;
+    transform: translateY(-2px);
+}
+
+.gm-style .gm-style-iw {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gm-ui-hover-effect {
+    background-color: #fff !important;
+    border-radius: 50% !important;
+    padding: 5px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+    #mapa h2 {
+        font-size: 2rem;
+    }
+
+    #mapa p {
+        font-size: 1rem;
+    }
+
+    #map {
+        height: 400px;
+        width: 95%;
+    }
+}
+/*Fim*/
+
+/*Final da pagina*/
+
+.counter-section {
+    background-color: var(--secondary);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.counter-item h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.testimonials {
+    background-color: #f4f4f4;
+}
+
+.testimonial-slider {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.testimonial-slide {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    display: none;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+}
+
+.testimonial-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.testimonial-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.testimonial-btn {
+    background-color: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.testimonial-btn:hover {
+    background-color: #e08b1c;
+}
+
+.cta {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/600');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact {
+    background-color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Exemplo: itens de contato um pouco menores */
+    gap: 1.5rem; /* Espaçamento entre os itens de contato */
+}
+
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    background-color: white;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+footer {
+    background: linear-gradient(90deg, #f4740c, #f4e094, #5caf6a);
+    color: #0c0e34;
+    padding: 3rem 1rem 1rem; /* Seu padding original */
+}
+
+.footer-content-wrapper {
+    max-width: 12000px; /* Define a largura máxima do conteúdo do rodapé */
+    margin: 0 auto;    /* Centraliza o conteúdo */
+}
+
+.footer-top-section {
+    display: grid;
+    /* Isso fará com que as seções de contato e "sobre/links" fiquem lado a lado se houver espaço,
+       e empilhadas em telas menores. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20rem; /* Espaçamento entre a seção de contato e a seção sobre/links */
+    margin-bottom: 3rem; /* Espaço antes do .footer-bottom */
+}
+
+.footer-about h3, .footer-links h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-about h3::after, .footer-links h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 170px;
+    height: 2px;
+    background-color: #0c0e34;
+}
+
+.footer-links ul {
+    list-style: none; /* Mantém */
+    padding-left: 0;  /* Adicione para remover o recuo padrão da lista */
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #0c0e34;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f4740c;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+   
+    border-top: 2px solid #0c0e34;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    color: #0c0e34;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: #f4740c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 700px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--dark);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 1rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+}
