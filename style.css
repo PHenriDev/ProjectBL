@@ -123,7 +123,7 @@ nav {
 /*Home*/
 
 .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/img/Foto1.jpg) ;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/Foto1.jpg) ;
     background-size: cover;
     background-position: center -50%;
     height: 110vh;
